@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct MissionView: View {
-    struct CrewMember {
-        let role: String
-        let astronaut: Astronaut
-    }
-    
+
     let mission: Mission
     let crew: [CrewMember]
     
@@ -26,21 +22,17 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
                     
+                    Text(mission.formattedLaunchDate)
+                    
                     VStack(alignment: .leading) {
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        RectangleDeviderView()
                         
                         Text("Mission Highlights")
                             .font(.title.bold())
                             .padding(.bottom, 5)
                         Text(mission.description)
                         
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        RectangleDeviderView()
                         
                         Text("Crew")
                             .font(.title.bold())
